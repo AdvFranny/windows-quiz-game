@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows OS 測驗遊戲</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header-logo">
+            <img src="images/advantech-logo-notagl.png" alt="Advantech Logo" class="advantech-logo">
+        </div>
+        
+        <header>
+            <h1>還在使用過時的微軟作業系統嗎?</h1>
+            <p>您知道微軟官方已公告Windows 10 將在 2025 年 10 月停止支援嗎? 請回答以下問題，讓研華協助您準備好系統升級!</p>
+            <div class="microsoft-logo-container">
+                <img src="images/01_Microsoft_logo_(2012).svg.png" alt="Microsoft Logo" class="microsoft-logo">
+            </div>
+        </header>
+
+        <div class="quiz-container">
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            
+            <div class="question-counter">
+                <span id="current-question">1</span> / <span id="total-questions">7</span>
+            </div>
+
+            <div class="question-container" id="question-container">
+                <!-- 問題將透過 JavaScript 動態載入 -->
+            </div>
+
+            <div class="navigation">
+                <button id="prev-btn" class="btn btn-secondary" disabled>上一題</button>
+                <button id="next-btn" class="btn btn-primary">下一題</button>
+                <button id="submit-btn" class="btn btn-success" style="display: none;">查看結果</button>
+            </div>
+        </div>
+
+        <div class="results-container" id="results-container" style="display: none;">
+            <h2>測驗結果</h2>
+            <div id="results-content"></div>
+            <button id="restart-btn" class="btn btn-primary">重新開始</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

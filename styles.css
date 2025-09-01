@@ -1,0 +1,422 @@
+/* 全域樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8f9fa;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    /* position: relative; */
+}
+
+/* 研華 Logo 樣式 */
+.header-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+}
+
+.advantech-logo {
+    height: 40px;
+    width: auto;
+    /* filter: brightness(0) invert(1); 移除白色濾鏡，保持原始顏色 */
+}
+
+/* 標題區域 */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    /* text-shadow: 2px 2px 4px rgba(0,0,0,0.3); 移除陰影效果 */
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.microsoft-logo-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.microsoft-logo {
+    height: 60px;
+    width: auto;
+    opacity: 0.9;
+}
+
+/* 測驗容器 */
+.quiz-container {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+/* 進度條 */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    width: 14.29%; /* 1/7 */
+}
+
+/* 問題計數器 */
+.question-counter {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+/* 問題容器 */
+.question-container {
+    margin-bottom: 30px;
+}
+
+.question {
+    margin-bottom: 25px;
+}
+
+.question h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #333;
+    line-height: 1.4;
+}
+
+.question-info {
+    background-color: #f8f9fa;
+    border-left: 4px solid #007bff;
+    padding: 10px 15px;
+    margin: 15px 0;
+    font-size: 0.9rem;
+    color: #666;
+    border-radius: 0 4px 4px 0;
+}
+
+/* 即時建議樣式 */
+.suggestion-container {
+    margin-top: 20px;
+}
+
+.instant-suggestion {
+    background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+    border: 2px solid #2196f3;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.instant-suggestion h4 {
+    color: #1976d2;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.instant-suggestion p {
+    color: #424242;
+    line-height: 1.5;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 選項樣式 */
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #fafafa;
+}
+
+.option:hover {
+    border-color: #007bff;
+    background-color: #f0f8ff;
+}
+
+.option.selected {
+    border-color: #007bff;
+    background-color: #e3f2fd;
+}
+
+.option input[type="radio"] {
+    margin-right: 12px;
+    transform: scale(1.2);
+}
+
+.option label {
+    cursor: pointer;
+    font-size: 1rem;
+    flex: 1;
+}
+
+/* 導航按鈕 */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 120px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: #545b62;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-success:hover:not(:disabled) {
+    background-color: #1e7e34;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* 結果容器 */
+.results-container {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.results-container h2 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+.result-item {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.result-item h4 {
+    color: #007bff;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.result-item p {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.recommendation {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 25px 0;
+}
+
+.recommendation h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+/* 服務按鈕區域 */
+.service-buttons {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.service-buttons h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.service-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.btn-primary-service {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn-primary-service:hover {
+    background: linear-gradient(135deg, #0056b3, #004085);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+.btn-secondary-service {
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+    color: white;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.btn-secondary-service:hover {
+    background: linear-gradient(135deg, #1e7e34, #155724);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header-logo {
+        position: relative;
+        top: auto;
+        left: auto;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .advantech-logo {
+        height: 35px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .microsoft-logo {
+        height: 50px;
+    }
+    
+    .quiz-container {
+        padding: 20px;
+    }
+    
+    .navigation {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .option {
+        padding: 12px;
+    }
+    
+    .button-group {
+        gap: 12px;
+    }
+    
+    .service-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .service-buttons h3 {
+        font-size: 1.1rem;
+    }
+}
